@@ -1,0 +1,22 @@
+{
+  "name": "dolphin",
+  "version": "1.0.0",
+  "description": "A modern boilerplate for React and Redux applications.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "express",
+    "es2015",
+    "webpack",
+    "react-router",
+    "redux-saga",
+    "hmr"
+  ],
+  "author": "Mostafa <tee.fouad@gmail.com>",
+  "license": "ISC"
+}
