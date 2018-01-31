@@ -10,6 +10,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 import webpackDevServer from './webpack/dev-server';
+import api from './routes/api';
 import routes from './routes';
 
 // use dotenv
@@ -41,6 +42,9 @@ app.use(cookieParser());
 
 // serve static files from 'public'
 app.use(express.static(path.join(__dirname, './public')));
+
+// use api
+app.use('/api', api);
 
 // use routes
 app.use('/', routes);
