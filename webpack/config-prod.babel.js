@@ -7,7 +7,10 @@ import webpack from 'webpack';
 
 export default {
   devtool: 'source-map',
-  entry: path.join(process.cwd(), 'src/index'),
+  entry: [
+    'babel-polyfill',
+    path.join(process.cwd(), 'src/index'),
+  ],
   output: {
     filename: 'bundle.js',
     path: path.join(process.cwd(), 'public', 'js'),
@@ -16,6 +19,11 @@ export default {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
   module: {
     rules: [

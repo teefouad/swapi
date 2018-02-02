@@ -6,7 +6,9 @@ import path from 'path';
 import webpack from 'webpack';
 
 export default {
+  devtool: 'eval-source-map',
   entry: [
+    'babel-polyfill',
     'webpack-hot-middleware/client?reload=true',
     path.join(process.cwd(), 'src/index'),
   ],
@@ -15,7 +17,6 @@ export default {
     path: path.join(process.cwd(), 'public', 'js'),
     publicPath: '/js',
   },
-  devtool: 'eval-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
